@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Euler.Problems
 {
@@ -16,6 +17,14 @@ namespace Euler.Problems
 
         public override long Solve()
         {
+            var limit = 20;
+            Dictionary<int, int> primes = new Dictionary<int, int>();
+
+            for (int factor = 1; factor <= limit; factor++)
+            {
+
+            }
+
             return 0;
         }
     }
