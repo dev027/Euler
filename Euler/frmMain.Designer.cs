@@ -33,6 +33,8 @@
             this.btnProblem003 = new System.Windows.Forms.Button();
             this.btnProblem004 = new System.Windows.Forms.Button();
             this.btnProblem005 = new System.Windows.Forms.Button();
+            this.btnProblem006 = new System.Windows.Forms.Button();
+            this.btnProblem007 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProblem001
@@ -80,11 +82,31 @@
             this.btnProblem005.Text = "Problem 005";
             this.btnProblem005.UseVisualStyleBackColor = true;
             // 
+            // btnProblem006
+            // 
+            this.btnProblem006.Location = new System.Drawing.Point(13, 163);
+            this.btnProblem006.Name = "btnProblem006";
+            this.btnProblem006.Size = new System.Drawing.Size(75, 23);
+            this.btnProblem006.TabIndex = 5;
+            this.btnProblem006.Text = "Problem 006";
+            this.btnProblem006.UseVisualStyleBackColor = true;
+            // 
+            // btnProblem007
+            // 
+            this.btnProblem007.Location = new System.Drawing.Point(13, 193);
+            this.btnProblem007.Name = "btnProblem007";
+            this.btnProblem007.Size = new System.Drawing.Size(75, 23);
+            this.btnProblem007.TabIndex = 6;
+            this.btnProblem007.Text = "Problem 007";
+            this.btnProblem007.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProblem007);
+            this.Controls.Add(this.btnProblem006);
             this.Controls.Add(this.btnProblem005);
             this.Controls.Add(this.btnProblem004);
             this.Controls.Add(this.btnProblem003);
@@ -104,6 +126,8 @@
         private System.Windows.Forms.Button btnProblem003;
         private System.Windows.Forms.Button btnProblem004;
         private System.Windows.Forms.Button btnProblem005;
+        private System.Windows.Forms.Button btnProblem006;
+        private System.Windows.Forms.Button btnProblem007;
     }
 }
 

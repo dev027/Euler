@@ -4,6 +4,7 @@ using Euler.Problems;
 
 namespace Euler
 {
+    // ReSharper disable once InconsistentNaming
     public partial class FrmMain : Form
     {
         public FrmMain()
@@ -18,6 +19,8 @@ namespace Euler
             btnProblem003.Click += BtnProblem003_Click;
             btnProblem004.Click += BtnProblem004_Click;
             btnProblem005.Click += BtnProblem005_Click;
+            btnProblem006.Click += BtnProblem006_Click;
+            btnProblem007.Click += BtnProblem007_Click;
         }
 
         private void BtnProblem001_Click(object sender, EventArgs e)
@@ -40,6 +43,13 @@ namespace Euler
         {
             new Problem005().Display();
         }
-
+        private void BtnProblem006_Click(object sender, EventArgs e)
+        {
+            new Problem006().Display();
+        }
+        private void BtnProblem007_Click(object sender, EventArgs e)
+        {
+            new Problem007().Display();
+        }
     }
 }

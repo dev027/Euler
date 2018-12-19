@@ -17,15 +17,90 @@ namespace Euler.Problems
 
         public override long Solve()
         {
-            var limit = 20;
-            Dictionary<int, int> primes = new Dictionary<int, int>();
+            long limit = 20;
+            IDictionary<long, int> primes = new Dictionary<long, int>();
 
-            for (int factor = 1; factor <= limit; factor++)
+            for (long factor = 2; factor <= limit; factor++)
             {
+                var primeFactors = factor.PrimeFactors();
 
+                foreach (var primeFactor in primeFactors)
+                {
+                    if (primes.ContainsKey(primeFactor.Key))
+                    {
+                        if (primes[primeFactor.Key] < primeFactor.Value)
+                        {
+                            primes[primeFactor.Key] = primeFactor.Value;
+                        }
+                    }
+                    else
+                    {
+                        primes.Add(primeFactor);
+                    }
+                }
             }
 
-            return 0;
+            long answer = 1;
+
+            foreach (var prime in primes)
+            {
+                for (int i = 1; i <= prime.Value; i++)
+                {
+                    answer *= prime.Key;
+                }
+            }
+
+            return answer;
+        }
+    }
+
+    internal static class Problem005ExtensionMethods
+    {
+        public static IDictionary<long, int> PrimeFactors(this long number)
+        {
+            var limit = (long) Math.Floor(Math.Sqrt(number));
+            IList<long> primes = new List<long>();
+            IDictionary<long, int> primeFactors = new Dictionary<long, int>();
+
+            for (var factor = 2; factor <= limit; factor++)
+            {
+                bool isPrime = true;
+                foreach (var prime in primes)
+                {
+                    if (factor % prime == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (!isPrime)
+                {
+                    continue;
+                }
+
+                primes.Add(factor);
+
+                var counter = 0;
+                while (number % factor == 0)
+                {
+                    counter++;
+                    number = number / factor;
+                }
+                primeFactors.Add(factor, counter);
+
+                if (number == 1)
+                {
+                    break;
+                }
+            }
+
+            if (number != 1)
+            {
+                primeFactors.Add(number, 1);
+            }
+
+            return primeFactors;
         }
     }
 }
